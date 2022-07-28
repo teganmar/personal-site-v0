@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width" initial-scale="1.0">
+    <title> Tegan's personal website</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='./style.css') }}"> -->
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="perconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<section id="home" class="header">
+    <nav>
+        <a href="index.html"></a>
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li><a href="">&lt/HOME&gt</a></li>
+                <li><a href="#about-section">&lt/ABOUT ME&gt</a></li>
+                <li><a href="#projects-section">&lt/PROJECTS&gt</a></li>
+                <li><a href="#contact-section">&lt/CONTACT ME&gt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<div class="text-box">
+    <h1>
+        Hi, I'm Tegan 👋🏼
+        <br> 
+        Nice to meet you
+    </h1>
+    <!-- <p> I like data. I especially like it packaged nicely in an intuitive and visually appealing form.
+        <br> So, I work to do just that. I specialize in creating full-stack data applications 
+        <br> for you to get the most out of your data!
+    </p> -->
+    <br>
+    <p id="awkward">And just so it's not awkward...</p>
+    <a href="#contact-section" class="hero-btn">introduce yourself</a>
+    <p id="awkward">I'd love to hear from you!</p>
+</div>
+</section>
+
+<!-- --------- About Me --------- -->
+<section id="about-section" class="about-me">
+    <h1 id="about-header">About me</h1>
+    <br>
+    <div class="row">
+        <div class="about-col" style="font-size: 25px;">
+            <h3>WHAT I DO</h3>
+            <hr style="height:10px; visibility:hidden;" />
+            <p style="font-size: 18px;">
+                I like data. I especially like it packaged nicely in an intuitive and visually appealing form.
+                So, I work to do just that. I specialize in creating full-stack data applications 
+                to help you get the most out of your data!
+            </p>
+        </div>
+        <div class="about-col" style="font-size: 25px;">
+            <h3>WHAT I USE</h3>
+            <hr style="height:10px; visibility:hidden;" />
+            <div id="skills" style="font-size: 18px;">
+                <ul>
+                    <li>
+                        Python Data Analysis & Modeling
+                        <ul id="sub-skills">
+                            <li>numpy, pandas, scipy, scikit-learn</li>
+                            <li>jupyter notebook</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Python Visualization
+                        <ul id="sub-skills">
+                            <li>Streamlit</li>
+                            <li>matplotlib, plotly, seaborn</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Python Web Framework
+                        <ul id="sub-skills">
+                            <li>SQL Alchemy</li>
+                            <li>FastAPI, Flask</li>
+                        </ul>
+                    </li>
+                    <li>PostgreSQL/MySQL</li>
+                    <li>
+                        AWS
+                        <ul id="sub-skills">
+                            <li>EC2, S3, Glue, Athena</li>
+                        </ul>
+                    </li>
+                    <li>html/css/js (bootstrap)</li>
+                    <li>Bash scripting</li>
+                  </ul>
+            </div>
+        </div>
+        <div class="about-col" style="font-size: 25px;">
+            <h3>MY RESUME</h3>
+            <hr style="height:10px; visibility:hidden;" />
+            <a id="resume" href="../images/Marianchuk_resume_2022.pdf" target="_blank" download>
+                <img src="../images/resume_img.png" alt="resume" width="250" height="350">
+                <br> <span >Click to download</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- --------- Projects --------- -->
+<section id="projects-section" class="projects">
+    <h1 id="project-header">Project Portfolio</h1>
+    <br><br>
+    <div class="row">
+        <div class="column" style="font-size: 20px;">
+            <h4>API | SPA | DATABASE MANAGEMENT</h4>
+            <p id="langs">python &middot MySQL &middot html &middot css &middot js</p>
+            <br>
+            <img src="../images/bkshlf_img.png" alt="" width="425" height="300">
+            <br>
+            <p style="font-size: 14px;">
+                A digital bookshelf to house and document all your favorite paper worlds as a single page application.
+            </p>
+        </div>
+        <div class="column" style="font-size: 20px;">
+            <h4>ML | API | BIG DATA | CLOUD COMPUTING</h4>
+            <p id="langs">python &middot PostgreSQL &middot html &middot css &middot js</p>
+            <br>
+            <img src="../images/rieman_img.png" alt="" width="425" height="300">
+            <br>
+            <p style="font-size: 14px;">
+                Machine learning model that forecasts customer retention and lifetime value deployed as a RestAPI.
+            </p>
+        </div>
+        <div class="column" style="font-size: 20px;">
+            <h4>DATA VISUALIZATION | DASHBOARDING</h4>
+            <p id="langs">python's streamlit &middot MySQL</p>
+            <br>
+            <img src="../images/spotify_app_dailies.png" alt="" width="450" height="300">
+            <br>
+            <p style="font-size: 14px;">
+                Dashboard that tracks and visualizes your "Spotify wrapped" style listening stats and creates personalized playlists.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- --------- Contact Me --------- -->
+<section id="contact-section" class="contact-me">
+<div id=""contact-form>
+    <h1 id="contact-header">Say hi!</h1>
+    <div class="container">
+        <form class="form-container" enctype="multipart/form-data">
+      
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="They call me...">
+      
+          <label for="email">Email Address</label>
+          <input type="text" id="email" name="email" placeholder="For business inquiries...">
+      
+          <!-- <label for="fun-fact">Dog or Cat</label>
+          <select id="fun-fact" name="fun-fact">
+            <option value="Dog">Dogs! They're (hu)man's best friend for good reason!</option>
+            <option value="Cat">Cats of course, nothing like love well-earned</option>
+            <option value="Both">C'mon, apples to oranges. I love both, you can't make me pick!</option>
+            <option value="Neither">Neither, I have my reasons, it doesn't make me a monster!</option>
+          </select> -->
+      
+          <label for="msg">Message</label>
+          <textarea type="text" id="msg" name="msg" placeholder="Something, anything at all..." style="height:300px"></textarea>
+      
+          <!-- <input type="submit" value="Submit"> -->
+          <button id="btnSubmit" type="submit" class="btn" onclick="createBook()">Send</button>
+      
+        </form>
+    </div>
+ </div>
+</section>
+
+<!-- --------- Footer --------- -->
+<section class="footer">
+    <div id="arrow">
+        <a id="to-top" href="#home"><i class="fa fa-arrow-up fa-3x"></i></a>
+    </div>
+    <!-- <button onclick="topFunction()" id="myBtn" title="Scroll to top">Top</button> -->
+    <!-- <h4>Find me online and irl:</h4>  -->
+    <div class="icons">
+        <h4>Find me online and irl:</h4>
+        <a href="https://www.linkedin.com/in/tegan-m-82553390/" target="_blank"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/tmarianchuk" target="_blank"><i class="fa fa-github"></i></a>
+        <i class="fa fa-map-marker"></i> <span id="my-loc">Chicago, IL</span>
+    </div>
+</section>
+
+
+</body>
+
+</html>
