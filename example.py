@@ -32,11 +32,6 @@ conf = ConnectionConfig(
 app = FastAPI()
 
 
-# html = """
-# <p>Thanks for using Fastapi-mail</p> 
-# """
-
-
 @app.post("/email")
 async def simple_send(email: EmailSchema, content:EmailContent) -> JSONResponse:
     html = f"""
