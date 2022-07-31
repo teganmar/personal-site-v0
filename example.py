@@ -1,11 +1,15 @@
 from fastapi import FastAPI, BackgroundTasks, UploadFile, File, Form
-from starlette.responses import JSONResponse
+from starlette.responses import JSONResponse, HTMLResponse
 from starlette.requests import Request
 from fastapi_mail import FastMail, MessageSchema,ConnectionConfig
 from pydantic import BaseModel, EmailStr
 from typing import List
 import uvicorn
 from dotenv import dotenv_values
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
+
 
 creds = dotenv_values(".env")
 
@@ -30,6 +34,25 @@ conf = ConnectionConfig(
 )
 
 app = FastAPI()
+
+# include html file
+templates = Jinja2Templates(directory="templates")
+# include css file
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+# not yet sure what this is for will look into it
+origins = ["*"]#["http://localhost:8404"]#["*"]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/", response_class=HTMLResponse)
+def home(request:Request):
+    return templates.TemplateResponse("index.html",{"request":request})
 
 
 @app.post("/email")
