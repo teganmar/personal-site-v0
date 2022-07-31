@@ -14,12 +14,16 @@ from fastapi.staticfiles import StaticFiles
 creds = dotenv_values(".env")
 
 class EmailSchema(BaseModel):
+    #email: List[EmailStr] = [EmailStr(creds['EMAIL'])]
+    name: str
+    ema: EmailStr
+    msg: str
     email: List[EmailStr] = [EmailStr(creds['EMAIL'])]
 
-class EmailContent(BaseModel): #sender's email
-    name: str
-    ema: str
-    msg: str
+# class EmailContent(BaseModel): #sender's email
+#     name: str
+#     ema: str
+#     msg: str
 
 conf = ConnectionConfig(
     MAIL_USERNAME = creds['EMAIL'],
@@ -56,17 +60,17 @@ def home(request:Request):
 
 
 @app.post("/email")
-async def simple_send(email: EmailSchema, content:EmailContent) -> JSONResponse:
+async def simple_send(email: EmailSchema) -> JSONResponse:#, content:EmailContent) -> JSONResponse:
     html = f"""
-    <p>Hi my name is {content.name}.</p>
+    <p>Hi my name is {email.name}.</p>
     <br>
-    <p>You can contact me at: {content.ema}.</p>
+    <p>You can contact me at: {email.ema}.</p>
     <br>
-    <p>{content.msg}</p>
+    <p>{email.msg}</p>
     """
 
     message = MessageSchema(
-        subject=f"Hello from {content.name}",
+        subject=f"Hello from {email.name}",
         recipients=email.dict().get("email"),  # List of recipients, as many as you can pass 
         body=html,
         subtype="html"
