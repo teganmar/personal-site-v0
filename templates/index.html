@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <!-- use this for stepper bar reference: https://w3collective.com/responsive-step-progress-bar/ -->
 <head>
     <meta name="viewport" content="width=device-width" initial-scale="1.0">
     <link rel="icon" href="data:,">
@@ -213,7 +214,7 @@
       
           <!-- having type as submit automatically sends the form as a GET request which we don't want -->
           <!-- <button id="btnSubmit" type="submit" class="btn" onclick="sendEmail()">Send</button> -->
-          <button id="btnSubmit" type="button" class="btn" onclick="sendEmail()">Send</button>
+          <button id="btnSubmit" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Sending..." type="button" class="btn" onclick="sendEmail()">Send</button>
       
         </form>
     </div>
@@ -240,6 +241,11 @@
 
 </html>
 <script>
+    $('.btn').on('click', function() {
+        var $this = $(this);
+        $this.button('loading');
+    });
+
     function sendEmail() {
         var contactForm = new FormData($('form#contactForm')[0]);
         var endpoint = '/email';
@@ -254,6 +260,8 @@
                 processData: false,
                 success: function (data) {
                     console.log("Email sent!");
+                    $('.btn').button('reset');
+                    swal("Email sent", "Thanks for getting in touch!", "success");
                     document.getElementById("contactForm").reset();//clears the form
                 },
                 error: function() {

@@ -31,7 +31,7 @@ h1{
 }
 #about-header::after {
     right: 37%;
-    bottom: 86%;
+    bottom: 88%;
     border-right: 10px solid lightskyblue;
     border-bottom: 8px solid lightskyblue;
    }
@@ -169,7 +169,7 @@ nav{
 /* -------- About Me ------- */
 #about-section {
     /* margin-top: 50%; */
-    padding-bottom: 25%;
+    /* padding-bottom: 25%; */
     background-color: rgb(213, 135, 27, 0.5);
    }
 .about-me{
@@ -338,7 +338,7 @@ clear: both;
   }
 /* -------- Projects ------- */
 #projects-section {
-    margin-top: 80%;
+    margin-top: 100%;
     /* padding-bottom: 25%; */
     /* background-color: rgb(213, 135, 27, 0.5); */
    }
@@ -428,6 +428,7 @@ input[type=text], select, textarea {
 }
 
 #btnSubmit{
+    position: relative;
     background-color: rgb(213, 135, 27);
     border: none;
     color: white;
