@@ -1,4 +1,4 @@
-from fastapi import FastAPI, BackgroundTasks, UploadFile, File, Form
+from fastapi import FastAPI, BackgroundTasks, UploadFile, File, Form, Depends
 from starlette.responses import JSONResponse, HTMLResponse
 from starlette.requests import Request
 from fastapi_mail import FastMail, MessageSchema,ConnectionConfig
@@ -19,6 +19,24 @@ class EmailSchema(BaseModel):
     ema: EmailStr
     msg: str
     email: List[EmailStr] = [EmailStr(creds['EMAIL'])]
+
+    @classmethod
+    def as_form(
+        cls,
+        name: str = Form(..., max_length=30),
+        ema: EmailStr = Form(...),
+        msg: str = Form(...),
+        email: List[EmailStr] = Form([EmailStr(creds['EMAIL'])])
+    ):
+        class Config:
+            orm_mode=True
+
+        return cls(
+            name=name,
+            ema=ema,
+            msg=msg,
+            email=email
+        )
 
 # class EmailContent(BaseModel): #sender's email
 #     name: str
@@ -60,7 +78,7 @@ def home(request:Request):
 
 
 @app.post("/email")
-async def simple_send(email: EmailSchema) -> JSONResponse:#, content:EmailContent) -> JSONResponse:
+async def simple_send(email: EmailSchema = Depends(EmailSchema.as_form)) -> JSONResponse:#, content:EmailContent) -> JSONResponse:
     html = f"""
     <p>Hi my name is {email.name}.</p>
     <br>

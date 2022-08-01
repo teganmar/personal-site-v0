@@ -3,6 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width" initial-scale="1.0">
     <link rel="icon" href="data:,">
+    <link rel="shortcut icon" href="#">
     <title> Tegan's personal website</title>
     <!-- <link rel="stylesheet" href="../style/style.css"> -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='./style.css') }}">
@@ -210,8 +211,9 @@
           <label for="msg">Message</label>
           <textarea type="text" id="msg" name="msg" placeholder="Something, anything at all..." style="height:300px"></textarea>
       
-          <!-- <input type="submit" value="Submit"> -->
-          <button id="btnSubmit" type="submit" class="btn" onclick="sendEmail()">Send</button>
+          <!-- having type as submit automatically sends the form as a GET request which we don't want -->
+          <!-- <button id="btnSubmit" type="submit" class="btn" onclick="sendEmail()">Send</button> -->
+          <button id="btnSubmit" type="button" class="btn" onclick="sendEmail()">Send</button>
       
         </form>
     </div>
@@ -243,19 +245,10 @@
         var endpoint = '/email';
         var jsonformdat = Object.fromEntries(contactForm.entries());
         // console.log(jsonformdat);
-        // var emailRecipient = ["tlmarianchuk@gmail.com"];
-        jsonformdat['email'] = ["tlmarianchuk@gmail.com"];
-        console.log(jsonformdat);
-        // var datapack = {jsonformdat,
-        //                 "email": emailRecipient
-        //                 };
-        // console.log(datapack)
         $.ajax({
                 type: 'POST',
                 url: endpoint,
-                data: //datapack,
-                jsonformdat,
-                     //contactForm,
+                data: contactForm,
                 cache: false,
                 contentType: false, //THIS IS NECESSARY. WON'T WORK WITHOUT IT!! //"application/x-www-form-urlencoded", //"application/json",
                 processData: false,
