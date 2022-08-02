@@ -63,13 +63,13 @@ h1{
 }
 #contact-header::before {
     left: 39%;
-    top: 2%;
+    top: 8%;
     border-left: 10px solid lightskyblue;
     border-top: 8px solid lightskyblue;
 }
 #contact-header::after {
     right: 39%;
-    bottom: 86%;
+    bottom: 80%;
     border-right: 10px solid lightskyblue;
     border-bottom: 8px solid lightskyblue;
     }
@@ -206,7 +206,7 @@ ul {
     border: 5px solid white;
     border-radius: 5%;
     padding: 10px 10px;
-    margin: 10px;
+    margin: 20px;
   }
   
 /* Clear floats after the columns */
@@ -215,43 +215,6 @@ content: "";
 display: table;
 clear: both;
 }
-
-/* #progress {
-    position: relative;
-    margin-bottom: 30px;   
-}
-
-#progress-bar {
-    position: absolute;
-    background: lightseagreen;
-    height: 5px;
-    width: 0%;
-    top: 60%;
-    left: 0;
-}
-
-#progress-num {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-}
-
-#progress-num .step {
-    border: 3px solid lightskyblue;
-    border-radius: 90%;
-    margin: auto;
-    width: 40px;
-    height: 25px;
-    line-height: 30px;
-    text-align: center;
-    background-color: #fff;
-    font-family: sans-serif;
-    font-size: 14px;    
-    position: relative;
-    z-index: 1;
-} */
 
 #stepProgressBar {
     display: flex;
@@ -343,7 +306,7 @@ clear: both;
 .projects{
     position: absolute;
     width: 100%;
-    /* height: 100%; */
+    /* height: 90%; */
     margin:auto;
     padding-top: 30px;
     text-align: center;
@@ -409,20 +372,16 @@ clear: both;
 }
 /* -------- Contact me ------- */
 #contact-section {
-    margin-top: 150%;
-    /* padding-bottom: 25%; */
-    /* background-color: rgb(213, 135, 27, 0.5); */
-   }
+    margin-top: 140%;
+}
 .contact-me{
     position: absolute;
     width: 100%;
     height: 100%;
     margin:auto;
-    padding-top: 30px;
+    padding-top: 100px;
     text-align: center;
-    /* padding-top: 100px; */
     background-color: rgb(135, 206, 250, 0.5);
-    /* bottom: 30px; */
 }
 label { 
     float: left;
@@ -438,22 +397,6 @@ input[type=text], select, textarea {
   margin-bottom: 16px;
   resize: vertical;
 }
-#contact-form{
-    border: 3px dashed black;
-    z-index: 4;
-}
-/* input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-} */
-
-/* input[type=submit]:hover {
-  background-color: #45a049;
-} */
 
 .container {
   border-radius: 5px;
