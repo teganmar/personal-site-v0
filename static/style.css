@@ -348,7 +348,7 @@ clear: both;
     padding-top: 30px;
     text-align: center;
 }
-#langs{
+#project-langs{
     font-size: 15px;
 }
 #project-desc{
@@ -386,18 +386,27 @@ clear: both;
     transition: 0.5s;
 }
 /* Clear floats after the columns */
-.row:after {
+/* .row:after {
 content: "";
 display: table;
 clear: both;
-}
-.column img:hover{
-    /* border: 3px solid aqua; */
-    /* border-color: aqua; */
-    box-shadow: 0 0 20px rgb(213, 135, 27);
-    /* background-color: rgb(135, 206, 250, 0.5); */
+} */
+
+.drop-text {
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    transition: all 300ms ease-in;
 }
 
+.column img:hover {
+    box-shadow: 0 0 20px rgb(213, 135, 27);
+}
+
+.column:hover .drop-text{
+    visibility: visible;
+    opacity: 1;
+}
 /* -------- Contact me ------- */
 #contact-section {
     margin-top: 150%;
