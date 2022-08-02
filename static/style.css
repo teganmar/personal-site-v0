@@ -31,7 +31,7 @@ h1{
 }
 #about-header::after {
     right: 37%;
-    bottom: 88%;
+    bottom: 87%;
     border-right: 10px solid lightskyblue;
     border-bottom: 8px solid lightskyblue;
    }
@@ -50,7 +50,7 @@ h1{
 }
 #project-header::after {
     right: 32%;
-    bottom: 86%;
+    bottom: 82%;
     border-right: 10px solid rgb(213, 135, 27);
     border-bottom: 8px solid rgb(213, 135, 27);
     }
@@ -175,7 +175,7 @@ nav{
 .about-me{
     position: absolute;
     width: 100%;
-    height: 120%;
+    /* height: 120%; */
     margin:auto;
     text-align: center;
     padding-top: 30px;
@@ -338,14 +338,12 @@ clear: both;
   }
 /* -------- Projects ------- */
 #projects-section {
-    margin-top: 100%;
-    /* padding-bottom: 25%; */
-    /* background-color: rgb(213, 135, 27, 0.5); */
-   }
+    margin-top: 70%;
+}
 .projects{
     position: absolute;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     margin:auto;
     padding-top: 30px;
     text-align: center;
@@ -353,23 +351,51 @@ clear: both;
 #langs{
     font-size: 15px;
 }
-.column {
-    float: left;
-    max-block-size: max-content;
-    /* height: 420px; */
-    padding: 10px 10px;
-    transition: 1s;
-  }
+#project-desc{
+    font-size: 14px;
+}
+
+.portfolio-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px,auto));
+    grid-gap: 2rem;
+    align-items: center;
+    margin-top: 3rem;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
   
+.column {
+    position: relative;
+    font-size: 20px;
+    /* float: left;
+    max-block-size: max-content;
+    padding: 10px 10px; 
+    transition: 1s; */
+}
+
+.column img {
+    max-width: 100%;
+    width: 550px;
+    max-height: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid rgb(213, 135, 27);
+    transition: 0.5s;
+}
 /* Clear floats after the columns */
 .row:after {
 content: "";
 display: table;
 clear: both;
 }
-.column:hover{
-    /* background-color: lightskyblue; */
-    background-color: rgb(135, 206, 250, 0.5);
+.column img:hover{
+    /* border: 3px solid aqua; */
+    /* border-color: aqua; */
+    box-shadow: 0 0 20px rgb(213, 135, 27);
+    /* background-color: rgb(135, 206, 250, 0.5); */
 }
 
 /* -------- Contact me ------- */
