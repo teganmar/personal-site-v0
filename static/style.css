@@ -63,13 +63,13 @@ h1{
 }
 #contact-header::before {
     left: 39%;
-    top: 8%;
+    top: 1%;
     border-left: 10px solid lightskyblue;
     border-top: 8px solid lightskyblue;
 }
 #contact-header::after {
     right: 39%;
-    bottom: 80%;
+    bottom: 87%;
     border-right: 10px solid lightskyblue;
     border-bottom: 8px solid lightskyblue;
     }
@@ -372,14 +372,15 @@ clear: both;
 }
 /* -------- Contact me ------- */
 #contact-section {
-    margin-top: 140%;
+    margin-top: 120%;
 }
 .contact-me{
     position: absolute;
     width: 100%;
-    height: 100%;
-    margin:auto;
-    padding-top: 100px;
+    height: 110%;
+    /* margin:auto; */
+    /* padding-top: 80px; */
+    padding: 20px;
     text-align: center;
     background-color: rgb(135, 206, 250, 0.5);
 }
@@ -402,7 +403,7 @@ input[type=text], select, textarea {
   border-radius: 5px;
   text-align: center;
   /* background-color: lightskyblue; */
-  padding: 20px;
+  padding: 0px;
 }
 
 #btnSubmit{
